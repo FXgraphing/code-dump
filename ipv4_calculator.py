@@ -1,11 +1,17 @@
 # Input
 
-octet1 = int(input("Enter the first octet (0-255): "))
+print("=========================================")
+print("> IPv4 Calculator")
+print("=========================================")
+octet1 = int(input("Enter the first octet  (0-255): "))
 octet2 = int(input("Enter the second octet (0-255): "))
-octet3 = int(input("Enter the third octet (0-255): "))
+octet3 = int(input("Enter the third octet  (0-255): "))
 octet4 = int(input("Enter the fourth octet (0-255): "))
-prefix = int(input("Enter the prefix (0-32): "))
-
+prefix = int(input("Enter the prefix        (0-32): "))
+print("=========================================")
+print(" ")
+print("> Calculating...")
+print(" ")
 # Address count + actual host count math
 #
 address_count_digit = (32 - prefix)
@@ -46,6 +52,6 @@ print(f"> Network address:      {network_octet1}.{network_octet2}.{network_octet
 print(f"> Broadcast address:    {broadcast_octet1}.{broadcast_octet2}.{broadcast_octet3}.{broadcast_octet4}")
 print(f"> Lowest host address:  {network_octet1}.{network_octet2}.{network_octet3}.{network_octet4 + 1}")
 print(f"> Highest host address: {broadcast_octet1}.{broadcast_octet2}.{broadcast_octet3}.{broadcast_octet4 - 1}")
-print(f"> Address count:        2^{address_count_digit} = {address_count}")
+print(f"> Address count:        2^{address_count_digit}   =   {address_count}")
 print(f"> Host count:           2^{address_count_digit} - 2 = {host_count}")
 print("=========================================")
