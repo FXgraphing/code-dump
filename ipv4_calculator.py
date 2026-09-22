@@ -7,7 +7,8 @@ octet4 = int(input("Enter the fourth octet (0-255): "))
 prefix = int(input("Enter the prefix (0-32): "))
 
 # Address count + actual host count math
-
+#
+address_count_digit = (32 - prefix)
 address_count = 2 ** (32 - prefix)
 host_count = address_count - 2
 
@@ -26,19 +27,25 @@ network_octet2 = octet2 & mask_octet2
 network_octet3 = octet3 & mask_octet3
 network_octet4 = octet4 & mask_octet4
 
-# Calculates the broadcast address on each octet invidually by performing BITOR on the network_octet and wildcard (inverted) mask
+# Calculates the broadcast address on each octet invidualprint(f"Subnet mask:       {mask_octet1}.{mask_octet2}.{mask_octet3}.{mask_octet4}")ly by performing BITOR on the network_octet and wildcard (inverted) mask
 
 broadcast_octet1 = network_octet1 | (255 - mask_octet1)
 broadcast_octet2 = network_octet2 | (255 - mask_octet2)
 broadcast_octet3 = network_octet3 | (255 - mask_octet3)
 broadcast_octet4 = network_octet4 | (255 - mask_octet4)
 
+# Calculate the lowest and highest host address
+
+
+
 # Outputs the calculation results
 
 print(f"IPv4: {octet1}.{octet2}.{octet3}.{octet4}/{prefix}")
-print("============")
-print(f"Network address: {network_octet1}.{network_octet2}.{network_octet3}.{network_octet4}")
-print(f"Broadcast address: {broadcast_octet1}.{broadcast_octet2}.{broadcast_octet3}.{broadcast_octet4}")
-print(f"Subnet mask: {mask_octet1}.{mask_octet2}.{mask_octet3}.{mask_octet4}")
-print(f"Address count: {address_count}")
-print(f"Host count: {host_count}")
+print("=================================")
+print(f"Subnet mask:          {mask_octet1}.{mask_octet2}.{mask_octet3}.{mask_octet4}")
+print(f"Network address:      {network_octet1}.{network_octet2}.{network_octet3}.{network_octet4}")
+print(f"Broadcast address:    {broadcast_octet1}.{broadcast_octet2}.{broadcast_octet3}.{broadcast_octet4}")
+print(f"Lowest host address:  {}")
+print(f"Highest host address: {}")
+print(f"Address count:        2^{address_count_digit} = {address_count}")
+print(f"Host count:           2^{address_count_digit} - 2 = {host_count}")
