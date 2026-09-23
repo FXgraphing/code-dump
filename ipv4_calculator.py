@@ -12,8 +12,9 @@ print("=========================================")
 print(" ")
 print("> Calculating...")
 print(" ")
+
 # Address count + actual host count math
-#
+
 address_count_digit = (32 - prefix)
 address_count = 2 ** (32 - prefix)
 host_count = address_count - 2
@@ -33,7 +34,7 @@ network_octet2 = octet2 & mask_octet2
 network_octet3 = octet3 & mask_octet3
 network_octet4 = octet4 & mask_octet4
 
-# Calculates the broadcast address on each octet invidualprint(f"Subnet mask:       {mask_octet1}.{mask_octet2}.{mask_octet3}.{mask_octet4}")ly by performing BITOR on the network_octet and wildcard (inverted) mask
+# Calculates the broadcast address on each octet invidually by performing BITOR on the network_octet and wildcard (inverted) mask
 
 broadcast_octet1 = network_octet1 | (255 - mask_octet1)
 broadcast_octet2 = network_octet2 | (255 - mask_octet2)
@@ -42,7 +43,7 @@ broadcast_octet4 = network_octet4 | (255 - mask_octet4)
 
 # Lowest and highest host address get calculated in the Output section, those only affect the fourth octet so I felt that there wasn't a need to calculate them seperately
 
-# Outputs the calculation results
+# Output
 
 print("=========================================")
 print(f"> IPv4: {octet1}.{octet2}.{octet3}.{octet4}/{prefix}")
